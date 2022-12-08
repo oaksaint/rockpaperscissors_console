@@ -1,20 +1,31 @@
-//get an input from the player
-//assign the player input to a variable
-//assign computer player input to a variable
 //compare player variable to computer player variable
 //print out winner
 
 
 
+
+
+// get an input from the player and assign the player input to a variable
+const getPlayerChoice = function() {
+    const playerSelection = prompt("Rock, Paper or Scissors? Which one do you choose?");
+    if (playerSelection === null || playerSelection === "") {
+        alert("You have to choose one!");
+        getPlayerChoice();
+    }
+    }
+
 //randomly generate an input from 3 possible choices for the computer player
 const getComputerChoice = function() {
-    const computerPlay = Math.floor(Math.random() * 3) + 1;
-    if (computerPlay === 1) {
-        console.log("Computer plays Rock");
-    } else if (computerPlay === 2) {
-        console.log("Computer plays Paper");
-    } else if (computerPlay === 3) {
-        console.log("Computer plays Scissors");
+    let computerSelection = Math.floor(Math.random() * 3) + 1;
+    if (computerSelection === 1) {
+        computerSelection = "rock";
+    } else if (computerSelection === 2) {
+        computerSelection = "paper";
+    } else if (computerSelection === 3) {
+        computerSelection = "scissors";
     }
+    console.log(`Computer plays ${computerSelection}`);
+    return computerSelection;
 }
-getComputerChoice();
+
+getPlayerChoice();
