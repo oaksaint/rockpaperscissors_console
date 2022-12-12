@@ -4,8 +4,17 @@
 // get an input from the player and assign the player input to a variable
 const getPlayerChoice = function () {
   let playerPrompt = prompt("Rock, Paper or Scissors?").toLowerCase();
-  console.log(playerPrompt);
-  return playerPrompt;
+  if (
+    playerPrompt !== "rock" &&
+    playerPrompt !== "paper" &&
+    playerPrompt !== "scissors"
+  ) {
+    alert("You have to choose one!");
+    getPlayerChoice();
+  } else {
+    console.log(`You play ${playerPrompt}`);
+    return playerPrompt;
+  }
 };
 
 //randomly generate an input from 3 possible choices for the computer player
