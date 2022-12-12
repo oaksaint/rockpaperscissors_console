@@ -1,9 +1,12 @@
 //compare player variable to computer player variable
 //print out winner
 
-// get an input from the player and assign the player input to a variable
+// get a case insensitive input from the player, convert the input to lowercase and assign the player input to a variable
 const getPlayerChoice = function () {
-  let playerPrompt = prompt("Rock, Paper or Scissors?").toLowerCase();
+  let playerPrompt = prompt("Rock, Paper or Scissors?");
+  if (typeof playerPrompt == "string") {
+    playerPrompt = playerPrompt.toLowerCase();
+  }
   if (
     playerPrompt !== "rock" &&
     playerPrompt !== "paper" &&
@@ -31,5 +34,6 @@ const getComputerChoice = function () {
   return computerSelection;
 };
 
+// functions running in order
 getPlayerChoice();
 getComputerChoice();
