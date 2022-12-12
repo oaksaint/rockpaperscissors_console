@@ -106,6 +106,7 @@ const finalScore = function () {
   }
 };
 
+// for loop to run all rounds and give out a final score once it has run
 for (let i = 0; i < 5; i++) {
   getPlayerChoice();
   getComputerChoice();
