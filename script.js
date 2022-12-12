@@ -1,22 +1,19 @@
-//compare player variable to computer player variable
-//print out winner
-
 // get a case insensitive input from the player, convert the input to lowercase and assign the player input to a variable
 const getPlayerChoice = function () {
-  let playerPrompt = prompt("Rock, Paper or Scissors?");
-  if (typeof playerPrompt == "string") {
-    playerPrompt = playerPrompt.toLowerCase();
+  let playerSelection = prompt("Rock, Paper or Scissors?");
+  if (typeof playerSelection == "string") {
+    playerSelection = playerSelection.toLowerCase();
   }
   if (
-    playerPrompt !== "rock" &&
-    playerPrompt !== "paper" &&
-    playerPrompt !== "scissors"
+    playerSelection !== "rock" &&
+    playerSelection !== "paper" &&
+    playerSelection !== "scissors"
   ) {
     alert("You have to choose one!");
     getPlayerChoice();
   } else {
-    console.log(`You play ${playerPrompt}`);
-    return playerPrompt;
+    console.log(`You play ${playerSelection}`);
+    window.playerSelection = playerSelection;
   }
 };
 
@@ -31,9 +28,33 @@ const getComputerChoice = function () {
     computerSelection = "scissors";
   }
   console.log(`Computer plays ${computerSelection}`);
-  return computerSelection;
+  window.computerSelection = computerSelection;
+};
+
+//compare player variable to computer player variable and log the winner
+const playRound = function () {
+  if (playerSelection == "rock" && computerSelection == "rock") {
+    console.log("It's a draw!");
+  } else if (playerSelection == "rock" && computerSelection == "paper") {
+    console.log("You lose!");
+  } else if (playerSelection == "rock" && computerSelection == "scissors") {
+    console.log("You win!");
+  } else if (playerSelection == "paper" && computerSelection == "rock") {
+    console.log("You win!");
+  } else if (playerSelection == "paper" && computerSelection == "paper") {
+    console.log("It's a draw!");
+  } else if (playerSelection == "paper" && computerSelection == "scissors") {
+    console.log("You lose!");
+  } else if (playerSelection == "scissors" && computerSelection == "rock") {
+    console.log("You lose!");
+  } else if (playerSelection == "scissors" && computerSelection == "paper") {
+    console.log("You win!");
+  } else if (playerSelection == "scissors" && computerSelection == "scissors") {
+    console.log("It's a draw!");
+  }
 };
 
 // functions running in order
 getPlayerChoice();
 getComputerChoice();
+playRound();
