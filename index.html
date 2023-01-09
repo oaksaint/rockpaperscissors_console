@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Rock Paper Scissors CLI</title>
-    </head>
-    <body>
-        <script src="script.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rock Paper Scissors GUI edition</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Rock Paper Scissors</h1>
+    <h2>How to play:</h2>
+    <p>
+      Click one of the buttons to make your choice. You will play against the
+      computer, whoever wins 5 rounds wins the game!
+    </p>
+    <div class="buttons">
+      <button type="button" class="button rockButton">Rock 🪨</button>
+      <button type="button" class="button paperButton">Paper 📰</button>
+      <button type="button" class="button scissorsButton">Scissors ✂️</button>
+    </div>
+    <div class="choices">
+      <div>
+        <h3>You play:</h3>
+        <h3 class="playerChoice">Player choice</h3>
+      </div>
+      <div>
+        <h3>The computer plays:</h3>
+        <h3 class="computerChoice">Computer choice</h3>
+      </div>
+    </div>
+    <h3 class="whoWinsRound">Wins the round</h3>
+    <h3>SCORE:</h3>
+    <h3>Player: <span class="playerScore">0</span></h3>
+    <h3>Computer: <span class="computerScore">0</span></h3>
+    <h3 class="whoWinsGame">Wins the game</h3>
+    <!-- <script src="script.js"></script> -->
+  </body>
 </html>
