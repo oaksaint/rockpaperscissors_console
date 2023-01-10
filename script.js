@@ -69,36 +69,26 @@ const playRound = function (playerSelection, computerSelection) {
     result = "draw";
     document.querySelector(".whoWinsRound").style.visibility = "visible";
     document.querySelector(".whoWinsRound").textContent = "It's a draw!";
-  } else if (playerSelection == "rock" && computerSelection == "paper") {
+  } else if (
+    (playerSelection == "rock" && computerSelection == "paper") ||
+    (playerSelection == "paper" && computerSelection == "scissors") ||
+    (playerSelection == "scissors" && computerSelection == "rock")
+  ) {
     result = "loss";
     document.querySelector(".whoWinsRound").style.visibility = "visible";
-    document.querySelector(".whoWinsRound").textContent =
-      "You lose! Paper beats Rock!";
-  } else if (playerSelection == "rock" && computerSelection == "scissors") {
+    document.querySelector(
+      ".whoWinsRound"
+    ).textContent = `You lose, ${computerSelection} beats ${playerSelection}!`;
+  } else if (
+    (playerSelection == "rock" && computerSelection == "scissors") ||
+    (playerSelection == "paper" && computerSelection == "rock") ||
+    (playerSelection == "scissors" && computerSelection == "paper")
+  ) {
     result = "win";
     document.querySelector(".whoWinsRound").style.visibility = "visible";
-    document.querySelector(".whoWinsRound").textContent =
-      "You win! Rock beats Scissors!";
-  } else if (playerSelection == "paper" && computerSelection == "rock") {
-    result = "win";
-    document.querySelector(".whoWinsRound").style.visibility = "visible";
-    document.querySelector(".whoWinsRound").textContent =
-      "You win! Paper beats Rock!";
-  } else if (playerSelection == "paper" && computerSelection == "scissors") {
-    result = "loss";
-    document.querySelector(".whoWinsRound").style.visibility = "visible";
-    document.querySelector(".whoWinsRound").textContent =
-      "You lose! Scissors beats Paper!";
-  } else if (playerSelection == "scissors" && computerSelection == "rock") {
-    result = "loss";
-    document.querySelector(".whoWinsRound").style.visibility = "visible";
-    document.querySelector(".whoWinsRound").textContent =
-      "You lose! Rock beats Scissors!";
-  } else if (playerSelection == "scissors" && computerSelection == "paper") {
-    result = "win";
-    document.querySelector(".whoWinsRound").style.visibility = "visible";
-    document.querySelector(".whoWinsRound").textContent =
-      "You win! Scissors beats Paper!";
+    document.querySelector(
+      ".whoWinsRound"
+    ).textContent = `You win, ${playerSelection} beats ${computerSelection}!`;
   }
 };
 
