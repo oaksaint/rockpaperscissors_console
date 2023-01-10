@@ -45,22 +45,26 @@ playerScissors.addEventListener("click", function () {
   finalScore();
 });
 
-//function randomly generate an input from 3 possible choices for the computer player
+//  randomly generate an input from 3 possible choices for the computer player
 const getComputerChoice = function () {
   computerSelection = Math.floor(Math.random() * 3) + 1;
+  document.querySelector(".computerChoice").style.visibility = "visible";
   if (computerSelection === 1) {
     computerSelection = "rock";
-    document.querySelector(".computerChoice").style.visibility = "visible";
-    document.querySelector(".computerChoice").textContent = "Rock";
   } else if (computerSelection === 2) {
     computerSelection = "paper";
-    document.querySelector(".computerChoice").style.visibility = "visible";
-    document.querySelector(".computerChoice").textContent = "Paper";
   } else if (computerSelection === 3) {
     computerSelection = "scissors";
-    document.querySelector(".computerChoice").style.visibility = "visible";
-    document.querySelector(".computerChoice").textContent = "Scissors";
   }
+  printComputerChoice();
+};
+
+// prints out computer choice
+const printComputerChoice = function () {
+  document.querySelector(".computerChoice").textContent = `${
+    computerSelection.charAt(0).toUpperCase() +
+    computerSelection.slice(1).toLowerCase()
+  }`;
 };
 
 // compare player variable to computer player variable, print and log the winner
